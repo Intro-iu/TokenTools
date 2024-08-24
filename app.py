@@ -4,7 +4,7 @@ import subprocess
 app = Flask(__name__)
 
 client_id = "YOUR_CLIENT_ID"
-client_secret = "YOUR_CLIENT"
+client_secret = "YOUR_CLIENT_SECRET"
 
 @app.route("/onedrive")
 def home():
@@ -27,4 +27,3 @@ def callbackHandler():
     
 if __name__ == "__main__":
     app.run(debug=True, port=8000)
- 
