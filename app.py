@@ -11,10 +11,10 @@ def home():
     url = f"https://login.microsoftonline.com/common/oauth2/v2.0/authorize"
     
     query_params = {
-        "client_id": client_id, 
-        "scope": "Files.ReadWrite offline_access", 
-        "response_type": "code",
-        "redirect_uri":"http://localhost:8730/onedrive/callback"
+        "client_id":        client_id, 
+        "scope":            "Files.ReadWrite offline_access", 
+        "response_type":    "code",
+        "redirect_uri":     "http://localhost:8730/tokentools/onedrive/callback"
     }
     response = requests.get(url, params=query_params)
     return redirect(response.url)
