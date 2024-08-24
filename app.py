@@ -3,8 +3,8 @@ import requests
 import subprocess
 app = Flask(__name__)
 
-client_id = "89a77af5-8151-4623-bc7e-0969a76ef37f"
-client_secret = "BPk8Q~XGG6tN9s0lbyUh0ZXWZc72u5wIISnlgc~r"
+client_id = "YOUR_CLIENT_ID"
+client_secret = "YOUR_CLIENT"
 
 @app.route("/onedrive")
 def home():
@@ -14,7 +14,7 @@ def home():
         "client_id": client_id, 
         "scope": "Files.ReadWrite offline_access", 
         "response_type": "code",
-        "redirect_uri":"http://localhost:8000/onedrive/callback"
+        "redirect_uri":"http://localhost:8730/onedrive/callback"
     }
     response = requests.get(url, params=query_params)
     return redirect(response.url)
