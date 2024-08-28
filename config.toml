@@ -1,4 +1,4 @@
 [client]
-client_id = "YPUR_CLIENT_ID"
-client_secret = "YOUR_CLIENT_SECRET"
-scope = "YOUR_SCOPE"
+client_id = "d9118121-0f5e-4449-a3a2-7d9c35880dfb"
+client_secret = "JF-8Q~wdGLZXvARrjcjYksOPth6rsg3.lIprmdty"
+scope = "Files.ReadWrite offline_access"
