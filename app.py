@@ -26,7 +26,7 @@ def home():
 @app.route("/tokentools/azure/callback")
 def callbackHandler():
     code = request.args.get("code")
-    token = subprocess.check_output(["python3", "getToken.py", client_id, client_secret, code]).decode("utf-8").split(" ")
+    token = subprocess.check_output(["python3", "getToken.py", client_id, client_secret, code]).decode("utf-8").split("$$split$$")
     return render_template("callback.html", code=code, access_token=token[0], refresh_token=token[1])
     
 if __name__ == "__main__":
