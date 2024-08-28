@@ -10,7 +10,7 @@ client_id = config["client"]["client_id"]
 client_secret = config["client"]["client_secret"]
 scope = config["client"]["scope"]
 
-@app.route("/tokentools/onedrive")
+@app.route("/tokentools/azure")
 def home():
     url = f"https://login.microsoftonline.com/common/oauth2/v2.0/authorize"
     
@@ -18,12 +18,12 @@ def home():
         "client_id":        client_id, 
         "scope":            scope, 
         "response_type":    "code",
-        "redirect_uri":     "http://localhost:8730/tokentools/onedrive/callback"
+        "redirect_uri":     "http://localhost:8730/tokentools/azure/callback"
     }
     response = requests.get(url, params=query_params)
     return redirect(response.url)
 
-@app.route("/tokentools/onedrive/callback")
+@app.route("/tokentools/azure/callback")
 def callbackHandler():
     code = request.args.get("code")
     token = subprocess.check_output(["python3", "getToken.py", client_id, client_secret, code]).decode("utf-8").split(" ")
