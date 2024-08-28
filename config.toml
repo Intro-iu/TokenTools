@@ -1,3 +1,4 @@
 [client]
 client_id = "YPUR_CLIENT_ID"
 client_secret = "YOUR_CLIENT_SECRET"
+scope = "YOUR_SCOPE"

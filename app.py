@@ -8,6 +8,7 @@ app = Flask(__name__)
 config = toml.load("config.toml")
 client_id = config["client"]["client_id"]
 client_secret = config["client"]["client_secret"]
+scope = config["client"]["scope"]
 
 @app.route("/tokentools/onedrive")
 def home():
@@ -15,7 +16,7 @@ def home():
     
     query_params = {
         "client_id":        client_id, 
-        "scope":            "Files.ReadWrite offline_access", 
+        "scope":            scope, 
         "response_type":    "code",
         "redirect_uri":     "http://localhost:8730/tokentools/onedrive/callback"
     }
