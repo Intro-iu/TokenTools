@@ -16,11 +16,12 @@ url = f"https://login.microsoftonline.com/common/oauth2/v2.0/token"
 data = {
     "client_id":        client_id,
     "client_secret":    client_secret,
-    "redirect_uri":     "http://localhost:8000/onedrive/callback",
+    "redirect_uri":     "http://localhost:8730/tokentools/onedrive/callback",
     "code":             code,
     "grant_type":       "authorization_code"
 }
 
 if __name__ == "__main__":
     response = requests.post(url, data=data)
-    print(response.json())
+    print(response.json()["access_token"], end=" ")
+    print(response.json()["refresh_token"])
