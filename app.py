@@ -1,6 +1,6 @@
 from flask import Flask, redirect, request, render_template, url_for
+from getToken import getToken
 import requests
-import subprocess
 import toml
 
 app = Flask(__name__)
@@ -26,7 +26,7 @@ def home():
 @app.route("/tokentools/azure/callback")
 def callbackHandler():
     code = request.args.get("code")
-    token = subprocess.check_output(["python3", "getToken.py", client_id, client_secret, code]).decode("utf-8").split("$$split$$")
+    token = getToken(client_id, client_secret, code).split("$$split$$")
     return render_template("callback.html", code=code, access_token=token[0], refresh_token=token[1])
     
 if __name__ == "__main__":

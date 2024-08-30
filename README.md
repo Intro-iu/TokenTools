@@ -2,6 +2,11 @@
 TokenTools is a tool that helps developers obtain tokens (e.g., access_token, refresh_token) from Microsoft (Azure).
 
 # Usage
+First of all, clone the repo:
+```bash
+git clone https://github.com/Intro-iu/TokenTools.git
+```
+
 Modify the configuration file `config.toml`. 
 
 It should be in the following format:
@@ -18,8 +23,9 @@ Add the redirect URI `http://localhost:8730/tokentools/azure/callback` for your 
 
 ![61ff98b9554543c57f7606ddd0ca868](https://github.com/user-attachments/assets/a23c2edb-8e4a-4f1e-b578-3100d0270bd3)
 
-Then, run the program:
+Then, install dependencies and run the program:
 ```bash
+pip install -r requirements.txt
 python app.py
 ```
 
